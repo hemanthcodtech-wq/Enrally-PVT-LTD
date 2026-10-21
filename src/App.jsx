@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import FloatingActions from './components/FloatingActions';
 import CustomCursor from './components/CustomCursor';
 import ScrollProgressBar from './components/ScrollProgressBar';
+import SplashScreen from './components/SplashScreen';
 
 // Pages
 import Home from './pages/Home';
@@ -32,6 +33,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <div className="enrally-app-root">
+        <SplashScreen />
         <ScrollToTop />
         <ScrollProgressBar />
         <CustomCursor />
