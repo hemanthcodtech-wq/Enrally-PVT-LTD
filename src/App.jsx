@@ -13,6 +13,7 @@ import Services from './pages/Services';
 import ServiceDetail from './pages/ServiceDetail';
 import WhyEnrally from './pages/WhyEnrally';
 import Testimonials from './pages/Testimonials';
+import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
 
 import './App.css';
@@ -43,6 +44,7 @@ export default function App() {
             <Route path="/services/:serviceId" element={<ServiceDetail />} />
             <Route path="/why-enrally" element={<WhyEnrally />} />
             <Route path="/testimonials" element={<Testimonials />} />
+            <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/quote" element={<Contact />} />
           </Routes>

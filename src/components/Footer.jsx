@@ -41,6 +41,7 @@ export default function Footer() {
             <li><Link to="/services">Our Services</Link></li>
             <li><Link to="/why-enrally">Why Enrally</Link></li>
             <li><Link to="/testimonials">Testimonials</Link></li>
+            <li><Link to="/gallery">Gallery & Field Works</Link></li>
             <li><Link to="/contact">Contact Us</Link></li>
           </ul>
         </div>

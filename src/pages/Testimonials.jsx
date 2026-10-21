@@ -82,13 +82,27 @@ export default function Testimonials() {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = React.useState(
+    typeof window !== 'undefined' ? window.innerWidth <= 768 : false
+  );
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const itemsPerPage = isMobile ? 1 : 2;
+  const maxIndex = Math.max(0, testimonials.length - itemsPerPage);
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev === 0 ? testimonials.length - 2 : prev - 1));
+    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
   };
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev >= testimonials.length - 2 ? 0 : prev + 1));
+    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
   };
 
   return (
@@ -153,7 +167,7 @@ export default function Testimonials() {
             </button>
 
             <div className="testimonials-duo-grid">
-              {testimonials.slice(currentIndex, currentIndex + 2).map((item, idx) => (
+              {testimonials.slice(currentIndex, currentIndex + itemsPerPage).map((item, idx) => (
                 <div key={idx} className="minimal-testimonial-card enhanced">
                   <div className="card-top-row">
                     <span className="testimonial-tag">{item.tag}</span>
@@ -185,7 +199,7 @@ export default function Testimonials() {
           </div>
 
           <div className="slider-dots">
-            {Array.from({ length: testimonials.length - 1 }).map((_, dIdx) => (
+            {Array.from({ length: maxIndex + 1 }).map((_, dIdx) => (
               <span 
                 key={dIdx} 
                 className={`dot ${currentIndex === dIdx ? 'active' : ''}`}

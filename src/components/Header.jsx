@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { 
-  Menu, X, PhoneCall, ChevronDown, Users, ShieldCheck, 
+  Menu, X, PhoneCall, Phone, MessageCircle, ChevronDown, Users, ShieldCheck, 
   Sparkles, Wrench, Sun, Building2, ArrowRight 
 } from 'lucide-react';
 
@@ -155,16 +155,25 @@ export default function Header() {
           </NavLink>
 
           <NavLink 
-            to="/contact" 
+            to="/gallery" 
             className={({ isActive }) => `enrally-nav-item ${isActive ? 'active' : ''}`} 
             onClick={closeMenu}
             style={{ '--nav-idx': 5 }}
+          >
+            Gallery
+          </NavLink>
+
+          <NavLink 
+            to="/contact" 
+            className={({ isActive }) => `enrally-nav-item ${isActive ? 'active' : ''}`} 
+            onClick={closeMenu}
+            style={{ '--nav-idx': 6 }}
           >
             Contact
           </NavLink>
 
           {/* Mobile Only Direct Call & Quote buttons */}
-          <div className="mobile-menu-actions" style={{ '--nav-idx': 6 }}>
+          <div className="mobile-menu-actions" style={{ '--nav-idx': 7 }}>
             <a href="tel:+918277611643" className="header-phone-badge mobile-only" onClick={closeMenu}>
               <PhoneCall size={16} className="phone-pulse-icon" />
               <span>+91 82776 11643</span>
@@ -192,6 +201,29 @@ export default function Header() {
             <span>Request a Quote</span>
             <ArrowRight size={15} className="btn-arrow-icon" />
           </Link>
+
+          {/* Mobile Beside-Menu Action Icons (WhatsApp & Call) */}
+          <div className="mobile-header-actions">
+            <a 
+              href="https://wa.me/918277611643?text=Hello%20Enrally%2C%20I%20would%20like%20to%20enquire%20about%20your%20services." 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="mobile-header-icon-btn whatsapp" 
+              aria-label="Chat on WhatsApp"
+            >
+              <MessageCircle size={18} />
+              <span className="mobile-icon-ripple"></span>
+            </a>
+
+            <a 
+              href="tel:+918277611643" 
+              className="mobile-header-icon-btn call" 
+              aria-label="Call +91 82776 11643"
+            >
+              <Phone size={17} />
+              <span className="mobile-icon-ripple"></span>
+            </a>
+          </div>
 
           <button 
             className="mobile-hamburger" 

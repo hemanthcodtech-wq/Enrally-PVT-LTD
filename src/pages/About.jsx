@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Eye, Target, Users, ArrowRight, CheckCircle2, ShieldCheck, Building2, Sparkles } from 'lucide-react';
+import { Eye, Target, Users, ArrowRight, CheckCircle2, ShieldCheck, Building2, Sparkles, Quote, Award, Compass } from 'lucide-react';
 import founderImg from './Images/founder.png';
 import missionImg from './Images/mission.png';
 import visionImg from './Images/vision.jpg';
@@ -103,86 +103,233 @@ export default function About() {
       <section className="founder-note-section" data-reveal="fade-up">
         <div className="container">
           <div className="founder-note-card">
+            {/* Animated Multi-Layer Glow Orbs */}
+            <div className="founder-ambient-glow orb-cyan"></div>
+            <div className="founder-ambient-glow orb-navy"></div>
+            <div className="founder-card-mesh-bg"></div>
+
             <div className="founder-message-pane">
-              <span className="founder-badge">FOUNDER & MANAGING DIRECTOR'S MESSAGE</span>
-              <h3 className="founder-title">Leading with Purpose, Driven by Excellence</h3>
+              <div className="founder-badge-row">
+                <span className="founder-badge">
+                  <span className="founder-badge-dot"></span>
+                  <Sparkles size={14} className="sparkle-cyan-icon" />
+                  <span>FOUNDER & MANAGING DIRECTOR'S MESSAGE</span>
+                </span>
+              </div>
+
+              <h2 className="founder-title">
+                Leading with Purpose, <br className="hide-mobile" />
+                <span className="text-cyan-gradient">Driven by Excellence</span>
+              </h2>
               
               <div className="founder-paragraphs">
-                <p>
-                  From the very beginning, our vision has been clear: to redefine what it means to excel in specialties management. Today, as we stand on the cusp of a new chapter, I am proud to say that we have stayed true to that vision. Each one of you has played an integral role in bringing us to this point, and I have every confidence that together, we will continue to push boundaries and surpass expectations.
+                <p className="founder-lead-para">
+                  From the very beginning, our vision has been clear: to redefine what it means to excel in enterprise workforce supply and facility management across India. Today, as we stand on the cusp of an ambitious new chapter, I am proud to say that we have stayed true to that vision.
                 </p>
                 <p>
-                  In the dynamic landscape of specialties management, challenges will undoubtedly arise. But let us always remember that with challenge comes opportunity – an opportunity to learn, to grow, and to emerge stronger than ever before. Let us embrace these opportunities with open minds and courageous hearts, knowing that they are the building blocks of our success.
+                  In the dynamic landscape of industrial staffing and multi-disciplinary facility operations, challenges will undoubtedly arise. But let us always remember that with challenge comes opportunity — an opportunity to innovate, to elevate statutory compliance, and to emerge stronger than ever before.
                 </p>
                 <p>
-                  As we move forward, let us never lose sight of our values – integrity, collaboration, and a relentless pursuit of excellence. These values are the foundation upon which our company is built, and they will guide us through both triumphs and tribulations.
+                  As we scale across pan-India projects, our core pillars remain uncompromised: <strong>integrity</strong>, <strong>collaboration</strong>, and an <strong>unrelenting pursuit of operational excellence</strong>. These values are the bedrock upon which ENRALLY is built.
                 </p>
-                <p>
-                  I am honored to lead such a talented and dedicated team, and I am inspired by the passion and determination that each of you brings to your work every day. Together, there is no limit to what we can achieve.
-                </p>
-                <p className="founder-closing">
-                  Thank you for your unwavering commitment to our company and our vision. Here's to a future filled with growth, success, and endless possibilities.
-                </p>
+
+                {/* Animated Glassmorphic Pull Quote Callout */}
+                <div className="founder-quote-callout">
+                  <div className="callout-light-bar"></div>
+                  <Quote size={28} className="founder-quote-mark" />
+                  <p className="founder-closing">
+                    "Together with our dedicated supervisors and verified personnel on the ground, there is no limit to the benchmark of service we can achieve for our partners."
+                  </p>
+                </div>
+
+                {/* Leadership Key Milestones / Chips */}
+                <div className="founder-milestones-row">
+                  <div className="milestone-chip">
+                    <span className="chip-digit">100%</span>
+                    <span className="chip-label">Audited EPF & ESIC</span>
+                  </div>
+                  <div className="milestone-chip">
+                    <span className="chip-digit">Pan-India</span>
+                    <span className="chip-label">Rapid Deployment</span>
+                  </div>
+                  <div className="milestone-chip">
+                    <span className="chip-digit">24/7</span>
+                    <span className="chip-label">Operations Control</span>
+                  </div>
+                </div>
               </div>
 
               <div className="founder-signoff">
+                <div className="founder-sign-seal">
+                  <Award size={22} className="seal-icon-cyan" />
+                </div>
                 <div className="founder-name-tag">
                   <strong>Founder & Managing Director</strong>
                   <span>ENRALLY (OPC) PVT. LTD.</span>
+                  <small>CIN: U78300KA2024OPC183145</small>
                 </div>
               </div>
             </div>
 
             <div className="founder-photo-pane">
-              <div className="founder-photo-frame">
-                <img src={founderImg} alt="Founder & Managing Director, Enrally" className="founder-img" />
+              <div className="founder-photo-stage">
+                {/* Rotating Cyber-Halo Ring */}
+                <div className="founder-cyber-ring"></div>
+                <div className="founder-cyber-ring-outer"></div>
+
+                <div className="founder-photo-frame">
+                  <div className="founder-frame-ambient-curtain"></div>
+                  <img src={founderImg} alt="Founder & Managing Director, Enrally" className="founder-img" />
+                  <div className="founder-sheen-line"></div>
+                </div>
+
+                {/* Floating Authenticated Credential Badge */}
+                <div className="founder-float-credential">
+                  <span className="credential-pulse"></span>
+                  <div className="credential-text">
+                    <strong>Leadership & Integrity</strong>
+                    <span>Executive Board of Directors</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 3: COMPANY VISION & MISSION (Pixel Matched to Reference Poster) */}
-      <section className="vm-graphic-section">
+      {/* SECTION 3: COMPANY VISION (DEDICATED SECTION) */}
+      <section className="vision-standalone-section" data-reveal="fade-up">
         <div className="container">
-          <div className="vm-poster-card">
-            {/* Header Title with abstract background accent */}
-            <div className="vm-poster-header">
-              <span className="vm-super-label">Company</span>
-              <h2 className="vm-poster-title">Vision & Mission</h2>
-            </div>
+          <div className="standalone-vm-card vision-card">
+            {/* Ambient Background Glow & Mesh */}
+            <div className="vm-card-mesh-bg"></div>
+            <div className="vm-ambient-orb vision-orb"></div>
 
-            {/* Vision Block: Leader on left, Vision content on right */}
-            <div className="vm-row vision-row">
+            <div className="standalone-vm-grid">
+              {/* Leader Photo Column with Rotating Halo */}
               <div className="vm-figure-col">
-                <div className="vm-photo-cutout">
-                  <img src={visionImg} alt="Enrally Vision Leader" className="vm-person-img" />
+                <div className="vm-photo-stage">
+                  <div className="vm-cyber-ring"></div>
+                  <div className="vm-photo-cutout">
+                    <div className="vm-cutout-glow"></div>
+                    <img src={visionImg} alt="Enrally Vision Leader" className="vm-person-img" />
+                    <div className="vm-sheen-line"></div>
+                  </div>
+                  <div className="vm-float-tag vision-tag">
+                    <Target size={14} className="tag-icon-cyan" />
+                    <span>Future Horizon</span>
+                  </div>
                 </div>
               </div>
 
+              {/* Vision Content Column */}
               <div className="vm-content-col">
-                <div className="vm-badge vision-badge">Vision</div>
+                <div className="vm-header-pill">
+                  <span className="vm-pill-dot"></span>
+                  <span className="vm-super-label">Strategic Blueprint</span>
+                </div>
+
+                <div className="vm-badge vision-badge">
+                  <Target size={16} />
+                  <span>Our Vision</span>
+                </div>
+
+                <h2 className="vm-section-title">
+                  Setting Pan-India Benchmarks in <br className="hide-mobile" />
+                  <span className="text-cyan-gradient">Operational Reliability</span>
+                </h2>
+
                 <p className="vm-lead-intro">
-                  A <strong>ENRALLY (OPC) PVT. LTD.</strong>'s vision typically revolves around providing exceptional cleaning services while ensuring customer satisfaction, fostering a clean and healthy environment, and contributing positively to the community. Here's an example of a housekeeping company vision statement:
+                  At <strong>ENRALLY (OPC) PVT. LTD.</strong>, our vision revolves around providing world-class workforce deployment and facility management while maintaining 100% statutory transparency, continuous innovation, and measurable client satisfaction across all operational sites:
                 </p>
+
                 <blockquote className="vm-quote-block">
-                  "Our vision is to be the leading provider of professional cleaning services, setting the standard for excellence in cleanliness, reliability, and customer satisfaction. We aim to create clean and healthy environments that enhance the well-being and productivity of our clients. Through our commitment to quality, integrity, and innovation, we strive to exceed expectations, build lasting relationships, and make a positive impact on the communities we serve."
+                  <div className="vm-quote-bar"></div>
+                  <Quote size={24} className="vm-quote-icon" />
+                  <span>
+                    "To be the premier partner of choice for industrial, corporate, and renewable infrastructure staffing across India — establishing unparalleled benchmarks in workforce dignity, safety, uptime, and transparent statutory compliance."
+                  </span>
                 </blockquote>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Mission Block: Mission content on left, Team on right */}
-            <div className="vm-row mission-row">
+      {/* SECTION 4: COMPANY MISSION (DEDICATED SECTION) */}
+      <section className="mission-standalone-section" data-reveal="fade-up">
+        <div className="container">
+          <div className="standalone-vm-card mission-card">
+            {/* Ambient Background Glow & Mesh */}
+            <div className="vm-card-mesh-bg"></div>
+            <div className="vm-ambient-orb mission-orb"></div>
+
+            <div className="standalone-vm-grid mission-grid-flow">
+              {/* Mission Content Column */}
               <div className="vm-content-col">
-                <div className="vm-badge mission-badge">Mission</div>
+                <div className="vm-header-pill">
+                  <span className="vm-pill-dot mission-dot"></span>
+                  <span className="vm-super-label">Core Purpose</span>
+                </div>
+
+                <div className="vm-badge mission-badge">
+                  <Compass size={16} />
+                  <span>Our Mission</span>
+                </div>
+
+                <h2 className="vm-section-title">
+                  Delivering Excellence with <br className="hide-mobile" />
+                  <span className="text-cyan-gradient">Integrity & Precision</span>
+                </h2>
+
                 <p className="vm-text-body">
-                  At <strong>ENRALLY (OPC) PVT. LTD.</strong>, our mission is to provide impeccable cleaning services tailored to meet the unique needs of each client. We are dedicated to delivering consistent quality, reliability, and professionalism in every aspect of our work. Through attention to detail, eco-friendly practices, and continuous improvement, we aim to exceed our customers' expectations and earn their trust. Our team is driven by integrity, respect, and a passion for creating clean and comfortable spaces that enhance the lives of our clients. We are committed to excellence, customer satisfaction, and making a positive difference in the communities we serve.
+                  Our mission is to engineer tailored staffing and facility maintenance ecosystems that empower our clients to operate with zero downtime. We are committed to:
                 </p>
+
+                <div className="vm-mission-pillars">
+                  <div className="vm-m-pill" style={{ '--pill-delay': '0s' }}>
+                    <div className="pill-check-circle">
+                      <CheckCircle2 size={16} />
+                    </div>
+                    <div>
+                      <strong>100% Statutory Compliance:</strong>
+                      <p>Guaranteed monthly challans for EPF, ESIC & Minimum Wages.</p>
+                    </div>
+                  </div>
+                  <div className="vm-m-pill" style={{ '--pill-delay': '0.1s' }}>
+                    <div className="pill-check-circle">
+                      <CheckCircle2 size={16} />
+                    </div>
+                    <div>
+                      <strong>Rapid Mobilization:</strong>
+                      <p>48–72 hour deployment with verified standby bench reserves.</p>
+                    </div>
+                  </div>
+                  <div className="vm-m-pill" style={{ '--pill-delay': '0.2s' }}>
+                    <div className="pill-check-circle">
+                      <CheckCircle2 size={16} />
+                    </div>
+                    <div>
+                      <strong>Quality Oversight:</strong>
+                      <p>Dedicated Key Account Managers and digitized SLA audits.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
+              {/* Team Photo Column with Rotating Cyber Halo */}
               <div className="vm-figure-col">
-                <div className="vm-photo-cutout team-cutout">
-                  <img src={missionImg} alt="Enrally Professional Team" className="vm-team-img" />
+                <div className="vm-photo-stage team-stage">
+                  <div className="vm-cyber-ring team-ring"></div>
+                  <div className="vm-photo-cutout team-cutout">
+                    <div className="vm-cutout-glow"></div>
+                    <img src={missionImg} alt="Enrally Professional Team" className="vm-team-img" />
+                    <div className="vm-sheen-line"></div>
+                  </div>
+                  <div className="vm-float-tag team-tag">
+                    <ShieldCheck size={14} className="tag-icon-cyan" />
+                    <span>Certified Ground Crew</span>
+                  </div>
                 </div>
               </div>
             </div>
